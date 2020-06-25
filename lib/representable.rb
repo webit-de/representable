@@ -119,8 +119,6 @@ private
       represented.extend(self)
     end
   end
-
-  # require "representable/deprecations"
 end
 
 require 'representable/autoload'

@@ -11,11 +11,11 @@ module Representable
   ReadFragment = ->(input, options) { options[:binding].read(input, options[:as]) }
   Reader = ->(input, options) { options[:binding].evaluate_option(:reader, input, options) }
 
-  StopOnNotFound = ->(input, options) do
+  StopOnNotFound = ->(input, _options) do
     Binding::FragmentNotFound == input ? Pipeline::Stop : input
   end
 
-  StopOnNil = ->(input, options) do # DISCUSS: Not tested/used, yet.
+  StopOnNil = ->(input, _options) do # DISCUSS: Not tested/used, yet.
     input.nil? ? Pipeline::Stop : input
   end
 
