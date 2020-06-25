@@ -1,4 +1,3 @@
-require 'representable'
 require 'representable/hash/binding'
 
 module Representable
@@ -34,7 +33,7 @@ module Representable
       hash = create_representation_with({}, options, binding_builder)
 
       return hash if options[:wrap] == false
-      return hash unless wrap = options[:wrap] || representation_wrap(options)
+      return hash unless (wrap = options[:wrap] || representation_wrap(options))
 
       {wrap => hash}
     end
@@ -45,7 +44,7 @@ module Representable
   private
     def filter_wrap(data, options)
       return data if options[:wrap] == false
-      return data unless wrap = options[:wrap] || representation_wrap(options)
+      return data unless (wrap = options[:wrap] || representation_wrap(options))
       filter_wrap_for(data, wrap)
     end
 
