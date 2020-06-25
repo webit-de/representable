@@ -103,6 +103,7 @@ module Representable
 
     return input if options[:options][:include]&&res
     return input if options[:options][:exclude]&&!res
+
     Pipeline::Stop
   end
 end

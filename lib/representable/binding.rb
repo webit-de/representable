@@ -58,6 +58,7 @@ module Representable
 
     def default_for(value)
       return self[:default] if skipable_empty_value?(value)
+
       value
     end
 
