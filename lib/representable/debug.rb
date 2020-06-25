@@ -74,4 +74,3 @@ module Representable
     end
   end
 end
-
